@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7hwne2ut75ed"]
+
+[ext_resource type="Script" uid="uid://dh34duocjn2p4" path="res://Codigo/menu.gd" id="1_343rg"]
+[ext_resource type="Texture2D" uid="uid://blord0ydwetj2" path="res://Main_menu/Menu.png" id="2_58but"]
+[ext_resource type="FontFile" uid="uid://dkjjrfi2ae6t2" path="res://Fuente_texto/ari-w9500.ttf" id="3_58but"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_313jc"]
+texture = ExtResource("2_58but")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a14fl"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="MenuInicio" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_343rg")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 655.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_313jc")
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.5
+offset_top = -1.5
+offset_right = 92.5
+offset_bottom = 69.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_58but")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_a14fl")
+text = "JUGAR"
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.5
+offset_top = 138.5
+offset_right = 92.5
+offset_bottom = 209.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_58but")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_a14fl")
+text = "	SALIR"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

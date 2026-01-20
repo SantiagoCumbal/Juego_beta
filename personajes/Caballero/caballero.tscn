@@ -1,0 +1,167 @@
+[gd_scene load_steps=15 format=3 uid="uid://bubx481cmhqha"]
+
+[ext_resource type="Texture2D" uid="uid://57552lab6dc1" path="res://personajes/Caballero/CaballeroQuieto.png" id="1_1bf1c"]
+[ext_resource type="Script" uid="uid://dc0nxrsa07vui" path="res://Codigo/Player_caballero.gd" id="1_uck4n"]
+[ext_resource type="Texture2D" uid="uid://lqcn4yryaom8" path="res://personajes/Caballero/PersonajeCaballeroW.png" id="3_1vs1e"]
+[ext_resource type="Texture2D" uid="uid://c2etb7v6qbs4p" path="res://personajes/Caballero/CaballeroSalto.png" id="4_1vs1e"]
+[ext_resource type="Texture2D" uid="uid://bux8m01wv4oe2" path="res://kenney_pixel-platformer-summer/Tiles/tile_0046.png" id="5_m3kl0"]
+[ext_resource type="Texture2D" uid="uid://boru5bcelg6un" path="res://kenney_pixel-platformer-summer/Tiles/tile_0044.png" id="6_rdk5b"]
+[ext_resource type="FontFile" uid="uid://dkjjrfi2ae6t2" path="res://Fuente_texto/ari-w9500.ttf" id="7_rdk5b"]
+[ext_resource type="Script" uid="uid://qql5kf7qqj1f" path="res://Codigo/puntaje.gd" id="8_s13yl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugwex"]
+size = Vector2(16, 23)
+
+[sub_resource type="Animation" id="Animation_4gnwb"]
+resource_name = "Caminar"
+length = 0.7
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Caminar:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 0]
+}
+
+[sub_resource type="Animation" id="Animation_1bf1c"]
+resource_name = "Quieto"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Quieto:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_mhvlk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Caminar:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Salto:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_1vs1e"]
+resource_name = "Salto"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Salto:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.56666666, 0.76666665),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uck4n"]
+_data = {
+&"Caminar": SubResource("Animation_4gnwb"),
+&"Quieto": SubResource("Animation_1bf1c"),
+&"RESET": SubResource("Animation_mhvlk"),
+&"Salto": SubResource("Animation_1vs1e")
+}
+
+[node name="Caballero" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_uck4n")
+
+[node name="Quieto" type="Sprite2D" parent="."]
+position = Vector2(-1, -2.3841858e-07)
+scale = Vector2(1.1286551, 1.0714285)
+texture = ExtResource("1_1bf1c")
+hframes = 2
+region_rect = Rect2(37, 2, 19, 21)
+
+[node name="Caminar" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1.0000011, 4.7683716e-07)
+scale = Vector2(1.1249999, 1.0625)
+texture = ExtResource("3_1vs1e")
+hframes = 4
+
+[node name="Salto" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1, 0)
+scale = Vector2(1.125, 1.0625)
+texture = ExtResource("4_1vs1e")
+hframes = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -4.5)
+shape = SubResource("RectangleShape2D_ugwex")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_uck4n")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = 27.0
+offset_top = 11.0
+offset_right = 149.0
+offset_bottom = 102.0
+nine_patch_stretch = true
+texture_under = ExtResource("5_m3kl0")
+texture_progress = ExtResource("6_rdk5b")
+
+[node name="Puntaje" type="Label" parent="CanvasLayer"]
+offset_left = 996.0
+offset_top = 22.0
+offset_right = 1138.0
+offset_bottom = 74.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("7_rdk5b")
+theme_override_font_sizes/font_size = 40
+text = "0"
+script = ExtResource("8_s13yl")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 842.0
+offset_top = 22.0
+offset_right = 984.0
+offset_bottom = 74.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("7_rdk5b")
+theme_override_font_sizes/font_size = 40
+text = "SCORE:"

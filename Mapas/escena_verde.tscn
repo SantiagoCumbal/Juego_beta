@@ -1,0 +1,111 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfitrc2pif2rj"]
+
+[ext_resource type="Texture2D" uid="uid://bpsn62vxm72ka" path="res://kenney_pixel-platformer-summer/Tiles/Backgrounds/tile_0014.png" id="1_31kq7"]
+[ext_resource type="Texture2D" uid="uid://detscbwd1a5cy" path="res://kenney_pixel-platformer-summer/Tiles/Backgrounds/tile_0015.png" id="2_d5ax5"]
+[ext_resource type="Texture2D" uid="uid://daolg8gegqim2" path="res://kenney_pixel-platformer-summer/Tiles/Backgrounds/tile_0007.png" id="3_bnhku"]
+[ext_resource type="Texture2D" uid="uid://dki776f48rcyw" path="res://kenney_pixel-platformer-summer/Tiles/Backgrounds/tile_0006.png" id="4_f5rqm"]
+[ext_resource type="Texture2D" uid="uid://dg7773245p28c" path="res://kenney_pixel-platformer-summer/Tiles/Backgrounds/tile_0023.png" id="5_ge2yi"]
+[ext_resource type="Texture2D" uid="uid://cmsdri4nrlsri" path="res://kenney_pixel-platformer-summer/Tiles/Backgrounds/tile_0022.png" id="6_2vpu8"]
+
+[node name="Escena-verde" type="ParallaxBackground"]
+
+[node name="Paisaje" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(7.499983, -119.999985)
+scale = Vector2(11.458332, 10)
+texture = ExtResource("1_31kq7")
+
+[node name="Paisaje2" type="Sprite2D" parent="."]
+position = Vector2(280.46878, -121)
+scale = Vector2(11.294268, 9.916666)
+texture = ExtResource("2_d5ax5")
+
+[node name="Cielo-verde" type="Sprite2D" parent="."]
+position = Vector2(280, -379.50003)
+scale = Vector2(11.333334, 11.70833)
+texture = ExtResource("3_bnhku")
+
+[node name="Cielo-verde2" type="Sprite2D" parent="."]
+position = Vector2(7.999995, -380)
+scale = Vector2(11.500002, 11.666668)
+texture = ExtResource("4_f5rqm")
+
+[node name="Fondo-verde" type="Sprite2D" parent="."]
+position = Vector2(281, 86.99999)
+scale = Vector2(11.249998, 7.416667)
+texture = ExtResource("5_ge2yi")
+
+[node name="Fondo-verde2" type="Sprite2D" parent="."]
+position = Vector2(8.000014, 87.00001)
+scale = Vector2(11.5, 7.416667)
+texture = ExtResource("6_2vpu8")
+
+[node name="Fondo-verde3" type="Sprite2D" parent="."]
+position = Vector2(536, 86.99999)
+scale = Vector2(10.000001, 7.416667)
+texture = ExtResource("6_2vpu8")
+
+[node name="Fondo-verde4" type="Sprite2D" parent="."]
+position = Vector2(792, 86.99999)
+scale = Vector2(11.333333, 7.4166665)
+texture = ExtResource("5_ge2yi")
+
+[node name="Paisaje3" type="Sprite2D" parent="."]
+position = Vector2(536, -120.49999)
+scale = Vector2(10.000003, 9.875)
+texture = ExtResource("1_31kq7")
+
+[node name="Paisaje4" type="Sprite2D" parent="."]
+position = Vector2(792, -120.499985)
+scale = Vector2(11.333331, 9.875)
+texture = ExtResource("2_d5ax5")
+
+[node name="Cielo-verde3" type="Sprite2D" parent="."]
+position = Vector2(534.00006, -379.5)
+scale = Vector2(10.166664, 11.708332)
+texture = ExtResource("4_f5rqm")
+
+[node name="Cielo-verde4" type="Sprite2D" parent="."]
+position = Vector2(792, -379.50003)
+scale = Vector2(11.333334, 11.708333)
+texture = ExtResource("3_bnhku")
+
+[node name="Tile0022" type="Sprite2D" parent="."]
+position = Vector2(7.999995, 280)
+scale = Vector2(11.5, 8.666666)
+texture = ExtResource("6_2vpu8")
+
+[node name="Tile0023" type="Sprite2D" parent="."]
+position = Vector2(280.99997, 280)
+scale = Vector2(11.25, 8.666668)
+texture = ExtResource("5_ge2yi")
+
+[node name="Tile0024" type="Sprite2D" parent="."]
+position = Vector2(536, 280)
+scale = Vector2(9.999997, 8.666667)
+texture = ExtResource("6_2vpu8")
+
+[node name="Tile0025" type="Sprite2D" parent="."]
+position = Vector2(792, 280)
+scale = Vector2(11.333331, 8.666666)
+texture = ExtResource("5_ge2yi")
+
+[node name="Tile0006" type="Sprite2D" parent="."]
+position = Vector2(8.0000105, -652)
+scale = Vector2(11.5, 10.999999)
+texture = ExtResource("4_f5rqm")
+
+[node name="Tile0007" type="Sprite2D" parent="."]
+position = Vector2(281, -652)
+scale = Vector2(11.250001, 11.000001)
+texture = ExtResource("3_bnhku")
+
+[node name="Tile0008" type="Sprite2D" parent="."]
+position = Vector2(536, -652)
+scale = Vector2(10.000001, 10.999999)
+texture = ExtResource("4_f5rqm")
+
+[node name="Tile0009" type="Sprite2D" parent="."]
+position = Vector2(792, -652)
+scale = Vector2(11.333334, 11)
+texture = ExtResource("3_bnhku")

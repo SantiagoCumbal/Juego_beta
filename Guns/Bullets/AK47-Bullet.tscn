@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqdgyabbt3ccr"]
+
+[ext_resource type="Script" uid="uid://1yw3cxanrcs4" path="res://Guns/AK47/AK47-ammo.gd" id="1_jjsxx"]
+[ext_resource type="Texture2D" uid="uid://c3gs7xomrvek6" path="res://Guns/Guns Update - V1.01/Guns_V1.01 - Commission - Copy/01 - Individual sprites/Bullets & Ammo/AK 47/Bullet.png" id="2_tqvpm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftcmk"]
+size = Vector2(3, 2)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_jjsxx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tqvpm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_ftcmk")

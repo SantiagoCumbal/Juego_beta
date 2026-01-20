@@ -1,0 +1,44 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Wraith"
+run/main_scene="uid://b7hwne2ut75ed"
+config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/image="uid://ljdfe3w1rs83"
+config/icon="uid://ckyt7w7uvceiv"
+boot_splash/minimum_display_time=5000
+
+[audio]
+
+buses/default_bus_layout=""
+
+[autoload]
+
+Global="*res://Codigo/Global.gd"
+AudioManager="*res://Codigo/AudioManager.gd"
+
+[display]
+
+window/size/mode=3
+window/stretch/mode="canvas_items"
+
+[dotnet]
+
+project/assembly_name="jogo"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+anti_aliasing/quality/msaa_2d=1

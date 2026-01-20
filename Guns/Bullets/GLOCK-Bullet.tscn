@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://hl5ag8d8piyd"]
+
+[ext_resource type="Script" uid="uid://cwvyj53x13i4f" path="res://Guns/GLOCK/GLOCK-ammo.gd" id="1_thkbf"]
+[ext_resource type="Texture2D" uid="uid://2fvshmpy25g3" path="res://Guns/Guns Update - V1.01/Guns_V1.01 - Commission - Copy/01 - Individual sprites/Bullets & Ammo/Glock - P80/Bullet.png" id="2_eeqw1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4iyq"]
+size = Vector2(2, 2)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+texture_filter = 3
+script = ExtResource("1_thkbf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_eeqw1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_e4iyq")

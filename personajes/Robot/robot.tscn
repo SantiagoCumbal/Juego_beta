@@ -1,0 +1,175 @@
+[gd_scene load_steps=15 format=3 uid="uid://b1m1q1t4h7puq"]
+
+[ext_resource type="Script" uid="uid://bmv4khc1dr8tf" path="res://Codigo/Player_robot.gd" id="1_ru5oq"]
+[ext_resource type="Texture2D" uid="uid://b6gn3ah21bfd0" path="res://personajes/Robot/RobotQuieto.png" id="1_yhfw1"]
+[ext_resource type="Texture2D" uid="uid://dpopeoja3gcbr" path="res://personajes/Robot/RobotSalto.png" id="2_ru5oq"]
+[ext_resource type="Texture2D" uid="uid://g54s24jxpgmr" path="res://personajes/Robot/RobotMov.png" id="3_7xofo"]
+[ext_resource type="Texture2D" uid="uid://bux8m01wv4oe2" path="res://kenney_pixel-platformer-summer/Tiles/tile_0046.png" id="5_u2h44"]
+[ext_resource type="Texture2D" uid="uid://boru5bcelg6un" path="res://kenney_pixel-platformer-summer/Tiles/tile_0044.png" id="6_fabeg"]
+[ext_resource type="FontFile" uid="uid://dkjjrfi2ae6t2" path="res://Fuente_texto/ari-w9500.ttf" id="7_i2rge"]
+[ext_resource type="Script" uid="uid://qql5kf7qqj1f" path="res://Codigo/puntaje.gd" id="8_868is"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yyxj1"]
+size = Vector2(19, 23)
+
+[sub_resource type="Animation" id="Animation_ydsf0"]
+resource_name = "Caminar"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Caminar:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bkaji"]
+resource_name = "Quieto"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Quieto:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_hvhn1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Quieto:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Salto:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Caminar:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_754th"]
+resource_name = "Salto"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Salto:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.56666666, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fsqyg"]
+_data = {
+&"Caminar": SubResource("Animation_ydsf0"),
+&"Quieto": SubResource("Animation_bkaji"),
+&"RESET": SubResource("Animation_hvhn1"),
+&"Salto": SubResource("Animation_754th")
+}
+
+[node name="Robot" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_ru5oq")
+
+[node name="Quieto" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_yhfw1")
+hframes = 2
+
+[node name="Salto" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_ru5oq")
+hframes = 5
+frame = 1
+
+[node name="Caminar" type="Sprite2D" parent="."]
+texture = ExtResource("3_7xofo")
+hframes = 4
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0.5, -4.5)
+shape = SubResource("RectangleShape2D_yyxj1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fsqyg")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = 27.0
+offset_top = 11.0
+offset_right = 149.0
+offset_bottom = 102.0
+nine_patch_stretch = true
+texture_under = ExtResource("5_u2h44")
+texture_progress = ExtResource("6_fabeg")
+metadata/_edit_use_anchors_ = true
+
+[node name="Puntaje" type="Label" parent="CanvasLayer"]
+offset_left = 996.0
+offset_top = 22.0
+offset_right = 1138.0
+offset_bottom = 74.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("7_i2rge")
+theme_override_font_sizes/font_size = 40
+text = "0"
+script = ExtResource("8_868is")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 842.0
+offset_top = 22.0
+offset_right = 984.0
+offset_bottom = 74.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("7_i2rge")
+theme_override_font_sizes/font_size = 40
+text = "SCORE:"

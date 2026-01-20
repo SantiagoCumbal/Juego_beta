@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcf54krqwgpm0"]
+
+[ext_resource type="Texture2D" uid="uid://daolg8gegqim2" path="res://kenney_pixel-platformer-summer/Tiles/Backgrounds/tile_0007.png" id="1_fanfj"]
+[ext_resource type="Texture2D" uid="uid://detscbwd1a5cy" path="res://kenney_pixel-platformer-summer/Tiles/Backgrounds/tile_0015.png" id="2_d4yc1"]
+[ext_resource type="Texture2D" uid="uid://dg7773245p28c" path="res://kenney_pixel-platformer-summer/Tiles/Backgrounds/tile_0023.png" id="3_ssasw"]
+[ext_resource type="Texture2D" uid="uid://bpsn62vxm72ka" path="res://kenney_pixel-platformer-summer/Tiles/Backgrounds/tile_0014.png" id="4_77l53"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+position = Vector2(-19, -11)
+
+[node name="Tile0007" type="Sprite2D" parent="."]
+position = Vector2(16.249998, -81)
+scale = Vector2(8.895834, 2.6666667)
+texture = ExtResource("1_fanfj")
+
+[node name="Tile0015" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(71, -6.499999)
+scale = Vector2(4.333333, 3.5416667)
+texture = ExtResource("2_d4yc1")
+
+[node name="Tile0023" type="Sprite2D" parent="."]
+position = Vector2(16.249996, 48)
+scale = Vector2(8.895833, 1)
+texture = ExtResource("3_ssasw")
+
+[node name="Tile0014" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(-35.75, -6.500003)
+scale = Vector2(4.5625005, 3.5416667)
+texture = ExtResource("4_77l53")

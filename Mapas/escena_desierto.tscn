@@ -1,0 +1,130 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkafa6vri2na4"]
+
+[ext_resource type="Texture2D" uid="uid://cc452ydpo3g6u" path="res://kenney_pixel-platformer-summer/Tiles/Backgrounds/tile_0004.png" id="1_13nyt"]
+[ext_resource type="Texture2D" uid="uid://4d1qfnsiklbw" path="res://kenney_pixel-platformer-summer/Tiles/Backgrounds/tile_0012.png" id="2_ys46c"]
+[ext_resource type="Texture2D" uid="uid://cq02ka1i871gf" path="res://kenney_pixel-platformer-summer/Tiles/Backgrounds/tile_0013.png" id="3_mycmt"]
+[ext_resource type="Texture2D" uid="uid://ca1adsnfgede8" path="res://kenney_pixel-platformer-summer/Tiles/Backgrounds/tile_0020.png" id="4_ruleu"]
+[ext_resource type="Texture2D" uid="uid://bn8qx4fmvd6bd" path="res://kenney_pixel-platformer-summer/Tiles/Backgrounds/tile_0021.png" id="5_rgag7"]
+[ext_resource type="Texture2D" uid="uid://bdfj2clgjbi7r" path="res://kenney_pixel-platformer-summer/Tiles/Backgrounds/tile_0005.png" id="6_wn7x2"]
+
+[node name="escena-desierto" type="ParallaxBackground"]
+
+[node name="Tile0004" type="Sprite2D" parent="."]
+position = Vector2(-77.99999, -263)
+scale = Vector2(6.166666, 5.416666)
+texture = ExtResource("1_13nyt")
+
+[node name="Tile0012" type="Sprite2D" parent="."]
+position = Vector2(-78, -128)
+scale = Vector2(6.1666665, 5.8333335)
+texture = ExtResource("2_ys46c")
+
+[node name="Tile0013" type="Sprite2D" parent="."]
+position = Vector2(71, -128)
+scale = Vector2(6.250001, 5.8333335)
+texture = ExtResource("3_mycmt")
+
+[node name="Tile0020" type="Sprite2D" parent="."]
+position = Vector2(-78, 15.000004)
+scale = Vector2(6.166667, 6.083333)
+texture = ExtResource("4_ruleu")
+
+[node name="Tile0021" type="Sprite2D" parent="."]
+position = Vector2(71.00001, 14.999994)
+scale = Vector2(6.2500005, 6.0833335)
+texture = ExtResource("5_rgag7")
+
+[node name="Tile0005" type="Sprite2D" parent="."]
+position = Vector2(71, -263)
+scale = Vector2(6.249999, 5.416667)
+texture = ExtResource("6_wn7x2")
+
+[node name="Tile0014" type="Sprite2D" parent="."]
+position = Vector2(225, -128)
+scale = Vector2(6.583334, 5.8333335)
+texture = ExtResource("2_ys46c")
+
+[node name="Tile0015" type="Sprite2D" parent="."]
+position = Vector2(380, -128)
+scale = Vector2(6.333333, 5.8333335)
+texture = ExtResource("3_mycmt")
+
+[node name="Tile0016" type="Sprite2D" parent="."]
+position = Vector2(532, -128)
+scale = Vector2(6.333333, 5.8333335)
+texture = ExtResource("2_ys46c")
+
+[node name="Tile0017" type="Sprite2D" parent="."]
+position = Vector2(684, -128)
+scale = Vector2(6.333333, 5.8333335)
+texture = ExtResource("3_mycmt")
+
+[node name="Tile0022" type="Sprite2D" parent="."]
+position = Vector2(225.00005, 14.999998)
+scale = Vector2(6.583333, 6.083334)
+texture = ExtResource("4_ruleu")
+
+[node name="Tile0023" type="Sprite2D" parent="."]
+position = Vector2(379.99997, 14.999998)
+scale = Vector2(6.333331, 6.083333)
+texture = ExtResource("5_rgag7")
+
+[node name="Tile0024" type="Sprite2D" parent="."]
+position = Vector2(532, 14.999996)
+scale = Vector2(6.3333335, 6.083333)
+texture = ExtResource("4_ruleu")
+
+[node name="Tile0025" type="Sprite2D" parent="."]
+position = Vector2(684, 15.000002)
+scale = Vector2(6.333333, 6.0833335)
+texture = ExtResource("5_rgag7")
+
+[node name="Tile0006" type="Sprite2D" parent="."]
+position = Vector2(225, -263)
+scale = Vector2(6.583332, 5.4166665)
+texture = ExtResource("1_13nyt")
+
+[node name="Tile0007" type="Sprite2D" parent="."]
+position = Vector2(380.00003, -263)
+scale = Vector2(6.3333344, 5.416667)
+texture = ExtResource("6_wn7x2")
+
+[node name="Tile0008" type="Sprite2D" parent="."]
+position = Vector2(532, -263)
+scale = Vector2(6.333333, 5.416667)
+texture = ExtResource("1_13nyt")
+
+[node name="Tile0009" type="Sprite2D" parent="."]
+position = Vector2(684, -263)
+scale = Vector2(6.333333, 5.416667)
+texture = ExtResource("6_wn7x2")
+
+[node name="Tile0010" type="Sprite2D" parent="."]
+position = Vector2(-78, -396.00003)
+scale = Vector2(6.166667, 5.666667)
+texture = ExtResource("1_13nyt")
+
+[node name="Tile0011" type="Sprite2D" parent="."]
+position = Vector2(71, -396)
+scale = Vector2(6.25, 5.666666)
+texture = ExtResource("6_wn7x2")
+
+[node name="Tile0004" type="Sprite2D" parent="Tile0011"]
+position = Vector2(24.64, -5.3346157e-06)
+scale = Vector2(1.0533336, 1.0000002)
+texture = ExtResource("1_13nyt")
+
+[node name="Tile0005" type="Sprite2D" parent="Tile0011"]
+position = Vector2(49.440002, 4.4703484e-07)
+scale = Vector2(1.0133333, 0.99999994)
+texture = ExtResource("6_wn7x2")
+
+[node name="Tile0018" type="Sprite2D" parent="."]
+position = Vector2(532, -396)
+scale = Vector2(6.333333, 5.666667)
+texture = ExtResource("1_13nyt")
+
+[node name="Tile0019" type="Sprite2D" parent="."]
+position = Vector2(684, -396)
+scale = Vector2(6.333333, 5.666667)
+texture = ExtResource("6_wn7x2")

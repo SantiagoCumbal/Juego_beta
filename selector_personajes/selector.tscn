@@ -1,0 +1,130 @@
+[gd_scene load_steps=16 format=3 uid="uid://bvt76ool2hi6g"]
+
+[ext_resource type="Texture2D" uid="uid://blord0ydwetj2" path="res://Main_menu/Menu.png" id="1_4kdt2"]
+[ext_resource type="Script" uid="uid://b8d8cu6x1n7pg" path="res://Codigo/selector.gd" id="1_5vfum"]
+[ext_resource type="Texture2D" uid="uid://wfyelfcesky1" path="res://personajes/Arquera/PersonajeArquera.png" id="2_76q80"]
+[ext_resource type="Texture2D" uid="uid://d2nsctox3um6" path="res://personajes/Robot/PersonajeRobot.png" id="2_bem43"]
+[ext_resource type="FontFile" uid="uid://dkjjrfi2ae6t2" path="res://Fuente_texto/ari-w9500.ttf" id="2_ksrha"]
+[ext_resource type="Texture2D" uid="uid://dtiehuhr8xyjk" path="res://personajes/Caballero/PersonajeCaballero.png" id="4_bem43"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bem43"]
+texture = ExtResource("1_4kdt2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ksrha"]
+texture = ExtResource("2_bem43")
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5vfum"]
+texture = ExtResource("2_bem43")
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_34que"]
+texture = ExtResource("2_bem43")
+texture_margin_bottom = 6.0
+modulate_color = Color(0.16862746, 0.47843137, 0.8352941, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4kdt2"]
+texture = ExtResource("2_76q80")
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_76q80"]
+texture = ExtResource("2_76q80")
+texture_margin_bottom = 6.0
+modulate_color = Color(0.1667113, 0.47800457, 0.8359272, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lsi7n"]
+texture = ExtResource("4_bem43")
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_egmbp"]
+texture = ExtResource("4_bem43")
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h7jwl"]
+texture = ExtResource("4_bem43")
+texture_margin_bottom = 6.0
+modulate_color = Color(0.16862746, 0.47843137, 0.8352941, 1)
+
+[node name="Selector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5vfum")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 655.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_bem43")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -142.25
+offset_top = 123.0
+offset_right = 141.75
+offset_bottom = 173.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ksrha")
+theme_override_font_sizes/font_size = 42
+text = "Character Select"
+
+[node name="Button_robot" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -349.0
+offset_top = -17.5
+offset_right = -151.0
+offset_bottom = 145.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ksrha")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5vfum")
+theme_override_styles/hover = SubResource("StyleBoxTexture_34que")
+
+[node name="Button_arquera" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -17.5
+offset_right = 99.0
+offset_bottom = 145.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_4kdt2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4kdt2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_76q80")
+
+[node name="Button_caballero" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 151.0
+offset_top = -17.5
+offset_right = 349.0
+offset_bottom = 145.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_lsi7n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_egmbp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_h7jwl")
+
+[connection signal="pressed" from="Button_robot" to="." method="_on_button_robot_pressed"]
+[connection signal="pressed" from="Button_arquera" to="." method="_on_button_arquera_pressed"]
+[connection signal="pressed" from="Button_caballero" to="." method="_on_button_caballero_pressed"]

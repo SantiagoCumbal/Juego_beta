@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://ch4fycb67qcuh"]
+
+[ext_resource type="Script" uid="uid://cb3agc6cvlk2r" path="res://enemigos/verde/enemigo-verde.gd" id="1_bvx6m"]
+[ext_resource type="Texture2D" uid="uid://b21ww6qwtxlrp" path="res://kenney_pixel-platformer-summer/Tilemap/tilemap-characters.png" id="1_wo0er"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvx6m"]
+size = Vector2(13, 18)
+
+[sub_resource type="Animation" id="Animation_8udg1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_jn2gt"]
+resource_name = "enemigo-verde"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.43333337),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1wjt6"]
+_data = {
+&"RESET": SubResource("Animation_8udg1"),
+&"enemigo-verde": SubResource("Animation_jn2gt")
+}
+
+[node name="Enemigo-verde" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_bvx6m")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(1.0000001, 0.95833343)
+texture = ExtResource("1_wo0er")
+hframes = 9
+vframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_bvx6m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_1wjt6")
+}
